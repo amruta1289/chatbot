@@ -15,6 +15,9 @@ import { MatExpansionModule } from '@angular/material/expansion';
 import { MatDialogModule } from '@angular/material/dialog';
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 
+
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { TokenInterceptor } from './interceptor/token-interceptor';
 @NgModule({
   declarations: [
     AppComponent,
@@ -32,11 +35,18 @@ import {MatSlideToggleModule} from '@angular/material/slide-toggle';
         MatButtonModule,
         MatExpansionModule,
         MatDialogModule,
-        MatSlideToggleModule
+        MatSlideToggleModule,
+        HttpClientModule
         // AngularFontAwesomeModule,
         
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: TokenInterceptor,
+      multi: true,
+    },
+  ],
   bootstrap: [AppComponent],
   schemas: [ NO_ERRORS_SCHEMA , CUSTOM_ELEMENTS_SCHEMA]
 })
