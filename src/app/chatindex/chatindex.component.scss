@@ -1,0 +1,146 @@
+
+
+
+ 
+main {
+    width: 100%;
+    min-height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: inherit;
+    position: relative;
+}
+.padding-1{
+    padding: 1rem;
+}
+.flex {
+    display: flex;
+}
+
+.h-full {
+    height: 100%;
+}
+
+.w-full {
+    width: 100%;
+}
+// .bg-token-sidebar {
+//     background-color: #f9f9f9;
+//     width: 3rem;
+// }
+// .bg-token-sidebar-surface-primary {
+//     background-color: #f9f9f9;
+//     width: 260px;
+// }
+
+
+.flex-col {
+    flex-direction: column;
+}
+
+.flex-1 {
+    flex: 1 1 0%;
+}
+
+.max-w-full {
+    max-width: 100%;
+}
+
+.overflow-hidden {
+    overflow: hidden;
+}
+.nwchatside{
+    font-size: 0.875rem;
+    line-height: 1.25rem;   
+    width: 24px;
+    max-height: 25px;
+    background: #E5EAF1 0% 0% no-repeat padding-box;
+    border-radius: 18px;
+    opacity: 1;
+    color: #0096D6;
+    padding: 1px 8px;
+    margin-left: -4px;
+    margin-top: -5px;
+    cursor: pointer;
+}
+.nwchat {
+    font-size: .875rem;
+    line-height: 1.25rem;
+    top: 60px;
+    left: 10px;
+    width: 122px;
+    max-height: 35px;
+    /* UI Properties */
+    background: #E5EAF1 0% 0% no-repeat padding-box;
+    border-radius: 18px;
+    opacity: 1;
+    color: #0096D6;
+    padding: 8px;
+}
+
+.addcht {
+    margin-right: 5px;
+}
+.fontsize{
+    font-size: 0.875rem;
+}
+.bars {  
+    width: 24px;
+    height: 22px;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+.features{    
+text-align: left;
+letter-spacing: 0px;
+
+}
+.margin{
+    margin: 15px 0;
+}
+.history{  
+    color: var(--unnamed-color-9d9d9d);
+    text-align: left;   
+    letter-spacing: 0px;
+    color: #9D9D9D;
+}
+.history-down{
+    border-bottom: 1px solid #ccc;
+    height: 23rem;
+   max-height: 23rem;
+}
+.headerright{
+    position: sticky;
+}
+.textapply{
+    position: relative;
+    resize: none;
+}
+.textapplybtn{
+    position:absolute;
+    right: 10px;
+    top: 10px;
+    font-size: 30px; 
+    color: black;
+}
+.footerright{
+    position: relative;  
+    max-width: 48rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+.footerright .textapply{  
+    width: 48rem;
+    border-radius: 1rem;
+    border-color: rgba(0, 0, 0, .15);
+    padding: 12px;
+    height: 52px;
+}
+
+.textapply:focus-visible {
+    outline: 1px solid rgba(0, 0, 0, .15);
+}
+.nwchat{
+    cursor: pointer;
+}

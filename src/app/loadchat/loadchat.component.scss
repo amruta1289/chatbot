@@ -1,0 +1,57 @@
+.loadchat {
+    max-height: 28.5rem;
+    height: 28.5rem;
+    overflow: auto;
+    position: relative;
+    max-width: 48rem;
+    width: 48rem;
+    margin: 0 auto;
+}
+.reaction{
+    display: flex;
+    flex-direction: row;
+}
+.reaction i{
+    margin-right: 10px;
+    margin-top: 10px;
+}
+.sty{
+    font-size: 1.5rem;
+    line-height: 2rem;
+}
+.chat1, .chat2, .chat3{
+    border-radius: 0.7rem;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    padding: 10px;
+    width: 15.5rem;
+    max-width: 15.5rem;
+    cursor: pointer;
+}
+.chat1, .chat2{
+    margin-right: 10px;
+}
+.newchat{
+    position: absolute;
+    bottom: 17px;
+}
+.chat-container{
+    margin-top: 20px;
+}
+.message{
+    margin-top: 2rem;
+}
+.relative{
+    position: relative;
+}
+.absolute{
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+.fa-times{
+    color: #ccc;
+}
+.popup-show{
+    border-radius: 10px;
+    margin: 5px;
+}

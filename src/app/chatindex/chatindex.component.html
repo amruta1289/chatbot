@@ -1,0 +1,76 @@
+<main class="main">
+  <div class="relative z-0 flex h-full w-full overflow-hidden">
+    <div class="bg-token-sidebar padding-1 mat-accent"
+    [style.display]="(showicon == false) ? 'none' : 'block' ">
+    <div class="bars" style="padding: 2px;"> <i class="fa fa-bars"
+        aria-hidden="true" (click)="toggle()"></i>
+    </div>
+    <div class="nwchatside" (click)="craeteNewChat()" [matTooltip]="common.infochat">
+      <span class="addcht">+ </span>
+    </div>
+    <div class="features margin fontsize">
+     <span class="addcht"><i class="fa fa-info-circle" aria-hidden="true"
+          [matTooltip]="common.infotooltip"></i></span>
+    </div>
+    <div class="history-down margin fontsize"></div>
+    <div class="footerleft margin fontsize">
+      <div class="features margin fontsize">
+        <i class="fa fa-question-circle" aria-hidden="true" [matTooltip]="common.helpTootltip"></i> 
+      </div>
+      <div class="features margin fontsize">
+        <i class="fa fa-cog" aria-hidden="true"></i> 
+      </div>
+    </div>
+    </div>
+ 
+    <div class="bg-token-sidebar-surface-primary padding-1" color="primary" 
+      [style.display]="(showicon == true) ? 'none' : 'block' ">
+      <div class="bars">
+        <i class="fa fa-bars" aria-hidden="true" (click)="toggle()"></i>
+      </div>
+      <div>
+        <div class="nwchat" (click)="craeteNewChat()">
+          <span class="addcht">+ </span> {{common.newChattitle}}
+        </div>
+        <div class="features margin fontsize">
+         {{ common.FeaturesLimitations }} <span class="addcht"><i class="fa fa-info-circle" aria-hidden="true"
+              [matTooltip]="common.infotooltip"></i></span>
+        </div>
+        <div class="history margin fontsize">
+          {{common.History}}
+        </div>
+        <div class="history-down margin fontsize">
+          <div class="features margin fontsize">
+            How many BSODs happened las…
+          </div>
+          <div class="features margin fontsize">
+            Top 10 devices with maximum…
+          </div>
+        </div>
+        <div class="footerleft margin fontsize">
+          <div class="features margin fontsize">
+            <i class="fa fa-question-circle" aria-hidden="true" [matTooltip]="common.helpTootltip"></i> Help
+          </div>
+          <div class="features margin fontsize">
+            <i class="fa fa-cog" aria-hidden="true"></i> {{common.settings}}
+          </div>
+          <div>
+            <mat-button-toggle-group name="fontStyle" aria-label="Font Style">
+              <mat-button-toggle class="btn btn-primary" value="bold" (click)="toggleDarkTheme()">Dark</mat-button-toggle>
+              <mat-button-toggle class="btn btn-primary" value="italic" (click)="toggleDarkTheme()">Light</mat-button-toggle>              
+            </mat-button-toggle-group>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="relative flex h-full max-w-full flex-1 flex-col overflow-hidden padding-1">
+      <div class="headerright hidelighticon"><img src="/assets/images/Black_image_light_background.PNG" /></div>
+      <div class="headerright hidedarkicon"><img src="/assets/images/White_image_light_background.PNG" /></div>
+      <app-loadchat [message]="messages" [newchat]="newchat"></app-loadchat>
+      <div class="footerright"><textarea class="textapply" [(ngModel)]="currentMessage" (keyup.enter)="sendMessage()"> </textarea>
+        <i class="fa fa-arrow-circle-right textapplybtn" aria-hidden="true" (click)="sendMessage()"></i>
+      </div>
+    </div>
+  </div>
+
+</main>

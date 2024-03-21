@@ -1,0 +1,64 @@
+<div class="loadchat">
+  <div class="chat-container">
+    <div class="messages" *ngIf="message && message.length">
+      <div *ngFor="let message of message index as i" class="message">
+        <i class="fa fa-user-circle-o" aria-hidden="true"></i> {{ message }}
+        <div class="reaction">
+          <i class="fa fa-thumbs-o-up" aria-hidden="true" (click)="step = 'step'+ i; show = 'show'"
+            [ngStyle]="{'display': (step === 'step'+ i) ? 'none' : 'block'}"
+            [ngClass]="{'thumb': step === 'step1', 'down' : step === 'step' + (i+1) }"></i>
+          <i class="fa fa-thumbs-up" aria-hidden="true" (click)="step = 'step' + (i+1)"
+            [ngStyle]="{'display': (step ==='step'+ i) ? 'block' : 'none'}"></i>
+          <i class="fa fa-thumbs-o-down" aria-hidden="true" (click)="step = 'step' + (i+2); show = 'hide'"
+            [ngStyle]="{'display': (step === 'step' + (i+2)) ? 'none' : 'block'}"></i>
+          <i class="fa fa-thumbs-down" aria-hidden="true" (click)="step = 'step' + (i+3)"
+            [ngStyle]="{'display': (step === 'step' + (i+2)) ? 'block' : 'none'}"></i>
+
+          <i class="fa fa-refresh" aria-hidden="true"></i>
+          <div class="mt-3 w-full" *ngIf="step === 'step'+ i && show !== 'hide'">
+            <div class="min-h-[96px] w-full" style="opacity: 1;">
+              <div class="relative mt-2 flex w-full flex-col gap-3 rounded-lg border border-token-border-light p-4">
+               
+                <div class="absolute right-4 top-4 text-sm font-bold">
+                  <i class="fa fa-times" aria-hidden="true" (click)="show = 'hide'"
+                 ></i>
+                </div>
+                <div class="text-sm text-token-text-secondary">Tell us more:</div>
+                <div class="flex flex-wrap gap-3">
+                  <button (click)="show = 'hide'"
+                    class="rounded-lg border popup-show border-token-border-light px-3 py-1 text-sm text-token-text-secondary hover:text-token-text-primary hover:bg-token-main-surface-secondary">
+                    {{common.thumbUpmsg1}}</button>
+                  <button (click)="show = 'hide'"
+                    class="rounded-lg border popup-show border-token-border-light px-3 py-1 text-sm text-token-text-secondary hover:text-token-text-primary hover:bg-token-main-surface-secondary">
+                    {{common.thumbUpmsg2}}</button>
+                  <button (click)="show = 'hide'"
+                    class="rounded-lg border popup-show border-token-border-light px-3 py-1 text-sm text-token-text-secondary hover:text-token-text-primary hover:bg-token-main-surface-secondary">
+                   {{ common.thumbUpmsg3 }} </button>
+                  <button (click)="show = 'hide'"
+                    class="rounded-lg border  popup-show border-token-border-light px-3 py-1 text-sm text-token-text-secondary hover:text-token-text-primary hover:bg-token-main-surface-secondary">
+                    {{common.thumbUpmsg4}}</button>
+                  <button (click)="show = 'hide'"
+                    class="rounded-lg border popup-show border-token-border-light px-3 py-1 text-sm text-token-text-secondary hover:text-token-text-primary hover:bg-token-main-surface-secondary">
+                    {{common.thumbUpmsg5}}</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+    <div class="newchat" *ngIf="newchat && newchat.length">
+      <h2 class="sty">How Can I Help You Today</h2>
+      <div class="reaction">
+        <div class="chat1" (click)="suggestedchat('chat1')">{{common.chat1}}</div>
+        <div class="chat2" (click)="suggestedchat('chat2')">{{common.chat2}}</div><br />
+        <div class="chat3" (click)="suggestedchat('chat3')">{{common.chat3}}</div>
+      </div>
+
+    </div>
+
+
+  </div>
+</div>
