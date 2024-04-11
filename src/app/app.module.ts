@@ -17,7 +17,7 @@ import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 
 
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
-import { TokenInterceptor } from './interceptor/token-interceptor';
+// import { TokenInterceptor } from './interceptor/token-interceptor';
 @NgModule({
   declarations: [
     AppComponent,
@@ -40,13 +40,13 @@ import { TokenInterceptor } from './interceptor/token-interceptor';
         // AngularFontAwesomeModule,
         
   ],
-  providers: [
-    {
-      provide: HTTP_INTERCEPTORS,
-      useClass: TokenInterceptor,
-      multi: true,
-    },
-  ],
+  // providers: [
+  //   {
+  //     provide: HTTP_INTERCEPTORS,
+  //     useClass: TokenInterceptor,
+  //     multi: true,
+  //   },
+  // ],
   bootstrap: [AppComponent],
   schemas: [ NO_ERRORS_SCHEMA , CUSTOM_ELEMENTS_SCHEMA]
 })

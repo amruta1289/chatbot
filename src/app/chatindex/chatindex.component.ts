@@ -1,5 +1,6 @@
 import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { Constants } from '../../app/shared/constants/constants';
+import { ChatServiceService } from '../../app/services/chat-service.service';
 
 @Component({
   selector: 'app-chatindex',
@@ -8,13 +9,16 @@ import { Constants } from '../../app/shared/constants/constants';
 })
 export class ChatindexComponent implements OnInit {
   public showicon: boolean = false;
-  constructor(private readonly cdr: ChangeDetectorRef) { }
+  constructor(private readonly cdr: ChangeDetectorRef, private readonly chatService: ChatServiceService) { }
   public isChecked: boolean = true;
   public isDark = false;
   public common = Constants.dataImports;
   static readonly darkStyleName = Constants.dataImports.darkTheme;
 
   ngOnInit(): void {
+    this.chatService.getdata().subscribe(result => {
+      console.log(result);
+    })
   }
   messages: string[] = [];
   currentMessage: string = '';
